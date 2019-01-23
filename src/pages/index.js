@@ -10,7 +10,6 @@ class App extends React.Component {
       <div>
         <p>Hello World</p>
         <NewTodo />
-
         <TodosWithData />
       </div>
     );
