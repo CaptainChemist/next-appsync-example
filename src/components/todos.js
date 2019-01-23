@@ -15,15 +15,13 @@ const TodosWithData = () => (
               data: { onCreateTodo }
             }
           }
-        ) => {
-          return {
-            ...prev,
-            listTodos: {
-              __typename: "TodoConnection",
-              items: [onCreateTodo, ...prev.listTodos.items.filter(todo => todo.id !== onCreateTodo.id)]
-            }
-          };
-        }
+        ) => ({
+          ...prev,
+          listTodos: {
+            __typename: "TodoConnection",
+            items: [onCreateTodo, ...prev.listTodos.items.filter(todo => todo.id !== onCreateTodo.id)]
+          }
+        })
       });
       if (error) return <div>Error loading todos</div>;
       if (loading) return <div>Loading...</div>;

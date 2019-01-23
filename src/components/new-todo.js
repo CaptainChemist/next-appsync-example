@@ -15,15 +15,10 @@ class TodosWithData extends React.Component {
           <div>
             <input value={this.state.todo} onChange={e => this.setState({ todo: e.target.value })} />
             <button
-              onClick={event => {
-                const todo = { name: this.state.todo, completed: false };
-                console.log(todo);
-
-                createTodo({
-                  variables: {
-                    ...todo
-                  }
-                });
+              onClick={e => {
+                const variables = { name: this.state.todo, completed: false };
+                createTodo({ variables });
+                this.setState({ todo: "" });
               }}
             >
               Create Todo
