@@ -18,6 +18,7 @@
     "lodash": "^4.17.11",
     "next": "^7.0.2",
     "next-apollo-appsync": "0.0.7",
+    "next-plugin-graphql": "0.0.2",
     "next-with-apollo": "^3.3.2",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",

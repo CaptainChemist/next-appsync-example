@@ -7,7 +7,7 @@ class Todos extends React.Component {
     console.log(this.props);
     return (
       <div>
-        <p>Hello World</p>
+        <p>Todos</p>
       </div>
     );
   }

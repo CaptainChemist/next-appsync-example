@@ -1,5 +1,21 @@
 import React from "react";
 import Todos from "../components/todos";
+import TodosWithData from "../components/todos-new";
+
+import withData from "../lib/withData";
+import gql from "graphql-tag";
+
+const query = gql`
+  query listTodos {
+    listTodos {
+      items {
+        id
+        name
+        completed
+      }
+    }
+  }
+`;
 
 class App extends React.Component {
   render() {
@@ -8,29 +24,10 @@ class App extends React.Component {
       <div>
         <p>Hello World</p>
         <Todos />
+        <TodosWithData />
       </div>
     );
   }
 }
 
-export default App;
-
-//This code is copied from /components/todos and works when pasted here but
-//but does NOT work when we import the component from elsewhere
-
-// import React from "react";
-
-// import TodosQuery from "../graphql/components/todos";
-
-// class Todos extends React.Component {
-//   render() {
-//     console.log(this.props);
-//     return (
-//       <div>
-//         <p>Hello World</p>
-//       </div>
-//     );
-//   }
-// }
-
-// export default TodosQuery(Todos);
+export default withData(App);
